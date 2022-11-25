@@ -1,6 +1,6 @@
 import { h, getElementStyle } from './../utils';
 import NoteHeader from './../partials/note-header';
-import { ButtonAdd, ButtonTitle, ButtonMenu, ButtonUpload, ButtonTrash, ButtonPageView } from './../buttons';
+import { ButtonAddNote, ButtonTitle, ButtonMenu, ButtonDeleteAll, ButtonTrash, ButtonPageView } from './../buttons';
 function NavBar({viewSize, prefix, items, callbacks, icons}){
     const buttons = [ ButtonTitle, ButtonTrash];
     if(viewSize==='pageview'||viewSize==='fullscreen'){
@@ -10,22 +10,6 @@ function NavBar({viewSize, prefix, items, callbacks, icons}){
         className:`${prefix}--navbar`,
         style: getElementStyle('navbar')
     },[
-        h( 'div',{
-            key: `${prefix}--navbar__nav`,
-            className:`${prefix}--navbar__nav`,
-            style: getElementStyle('navbar-nav', null, { flexGrow: 1 } )
-        },
-            items?items.map((data)=>
-                h(NoteHeader,{
-                    key: `navbar-item__${data.id}`,
-                    data,
-                    prefix: `${prefix}--navbar__item`,
-                    icons,
-                    callbacks,
-                    buttons: buttons
-                })
-            ):null 
-        ),
         h('div',{
             key: `navbar-item__options`,
             className:`${prefix}--navbar__nav`
@@ -35,7 +19,7 @@ function NavBar({viewSize, prefix, items, callbacks, icons}){
                 viewSize: viewSize,
                 icons,
                 callbacks,
-                buttons: [ButtonAdd, ButtonPageView, ButtonUpload, ButtonTrash]
+                buttons: [ButtonDeleteAll, ButtonAddNote]
             })
         )
     ]);

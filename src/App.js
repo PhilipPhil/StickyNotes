@@ -8,7 +8,6 @@ function App() {
       <ReactStickyNotes
         backgroundColor="#fefefe"
         useCSS={true}
-        containerHeight={"400px"}
       />
     </div>
 

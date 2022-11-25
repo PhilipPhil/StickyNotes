@@ -3,7 +3,6 @@ import NavBar from './../navbar';
 import NoteBody from '../partials/note-body';
 export function PageView(props){
     return [
-        h(NavBar, { ...props, key: 'navbar' }),
         h('div', {
                 key: props.prefix, 
                 className: props.prefix,
@@ -20,6 +19,7 @@ export function PageView(props){
                     })
                 )
             )
-        )
+        ),
+        h(NavBar, { ...props, key: 'navbar' }),
     ]
 }

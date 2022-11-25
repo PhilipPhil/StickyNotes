@@ -1,5 +1,15 @@
 import { h, getNoteTitle } from './../utils';
 
+export function ButtonAddNote({prefix, data, icons, callbacks}){
+    return h('button',{
+        key: `${prefix}--button__add`,
+        className:`${prefix}--button ${prefix}--button__add`,
+        onClick:(e)=>callbacks.addItem(e, {id: data?data.id:null, position:data?data.position:null, selected: true})
+    }, 
+        icons.addNote
+    )
+}
+
 export function ButtonAdd({prefix, data, icons, callbacks}){
     return h('button',{
         key: `${prefix}--button__add`,
@@ -48,6 +58,16 @@ export function ButtonTrash({prefix, data, icons, callbacks }){
         onClick:(e)=>callbacks.deleteItem(e, {id: data?data.id:null})
     }, 
         icons.trash
+    );
+}
+
+export function ButtonDeleteAll({prefix, data, icons, callbacks }){
+    return h('button',{
+        key: `${prefix}--button__trash`,
+        className:`${prefix}--button ${prefix}--button__trash`,
+        onClick:(e)=>callbacks.deleteItem(e, {id: data?data.id:null})
+    }, 
+        icons.delete_all
     );
 }
 

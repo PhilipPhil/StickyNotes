@@ -1,6 +1,8 @@
 import { h, getElementStyle } from './../utils';
 const iconsClassName = "material-icons";
+export const addNote = h('i',{ className: iconsClassName, style: getElementStyle('icon') },'note_add');
 export const add = h('i',{ className: iconsClassName, style: getElementStyle('icon') },'add');
+export const delete_all = h('i',{ className: iconsClassName, style: getElementStyle('icon') },'delete');
 export const trash = h('i',{ className: iconsClassName, style: getElementStyle('icon') },'delete_outlined');
 export const menu = h('i',{ className: iconsClassName, style: getElementStyle('icon') },'more_horiz');
 export const hide = h('i',{ className: iconsClassName, style: getElementStyle('icon') },'visibility_off');

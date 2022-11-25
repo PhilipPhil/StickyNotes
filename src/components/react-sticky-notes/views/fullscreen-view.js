@@ -11,7 +11,6 @@ export function FullscreenView(props){
             height: '100vh'
         }
     },[
-        h(NavBar, { ...props, key: 'navbar' }),
         h('div', {
                 key: props.prefix, 
                 className: props.prefix,
@@ -28,6 +27,7 @@ export function FullscreenView(props){
                     })
                 )
             )
-        )
+        ),
+        h(NavBar, { ...props, key: 'navbar' }),
     ])
 }

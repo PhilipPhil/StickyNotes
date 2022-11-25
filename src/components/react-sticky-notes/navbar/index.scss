@@ -3,7 +3,7 @@
         white-space: nowrap;
         display: flex;
         justify-content: space-between;
-        background-color: #999999;
+        background-color: rgba(0,0,0,0);
         @media screen and (max-width: "800px") {
             flex-direction: column-reverse;
         }
@@ -28,14 +28,12 @@
                 left: 0;
                 top: 0;
                 pointer-events: none;
-                background-color: rgba(0,0,0,.15);
             }
             &--button{
                 cursor: pointer;
-                opacity: .8;
                 background: none;
                 border: none;
-                color:#fff;
+                color:black;
                 padding: 3px 5px;
                 &__title{
                     text-align: left;
@@ -44,7 +42,7 @@
                 }
                 &:hover,&:focus{
                     opacity: 1;
-                    background-color: rgba(0,0,0,.15);
+                    color: rgba(0,0,0,1);
                 }
             }
         }
